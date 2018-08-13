@@ -1,0 +1,39 @@
+name: redis
+summary: |
+  Redis is an open source (BSD licensed), in-memory data
+  structure store, used as a database, cache and message broker.
+maintainers:
+  - "Adam Stokes <adam.stokes@canonical.com>"
+  - "Cory Johns <cory.johns@canonical.com>"
+  - "George Kraft <george.kraft@canonical.com>"
+  - "Kevin Monroe <kevin.monroe@canonical.com>"
+  - "Konstantinos Tsakalozos <kos.tsakalozos@canonical.com>"
+  - "Mike Wilson <mike.wilson@canonical.com>"
+  - "Tim Van Steenburgh <tim.van.steenburgh@canonical.com>"
+description: |
+  Redis is an open source (BSD licensed), in-memory data structure store, used
+  as a database, cache and message broker. It supports data structures such as
+  strings, hashes, lists, sets, sorted sets with range queries, bitmaps,
+  hyperloglogs and geospatial indexes with radius queries. Redis has built-in
+  replication, Lua scripting, LRU eviction, transactions and different levels
+  of on-disk persistence, and provides high availability via Redis Sentinel and
+  automatic partitioning with Redis Cluster.
+
+  This charm deploys Redis to Kubernetes models in Juju.
+tags:
+  - database
+  - storage
+  - cache-proxy
+  - performance
+  - ops
+  - kubeflow
+series:
+  - kubernetes
+resources:
+  redis-image:
+    type: oci-image
+    description: 'Image used for Redis'
+    auto-fetch: true
+provides:
+  db:
+    interface: redis
