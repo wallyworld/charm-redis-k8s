@@ -4,6 +4,11 @@ from charms.reactive import when, when_not
 from charms import layer
 
 
+@when('charm.redis.started')
+def charm_ready():
+    layer.status.active('')
+
+
 @when('layer.docker-resource.redis-image.changed')
 def update_image():
     clear_flag('charm.redis.started')
